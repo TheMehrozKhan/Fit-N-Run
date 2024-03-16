@@ -1,0 +1,1289 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* .navBrand {
+  font-size: 3rem;
+  font-weight: normal;
+  text-decoration: none;
+  padding-left: .3rem;
+  color: #5CE1E6;
+  font-family: 'Faster One', cursive;
+  letter-spacing: .5rem;
+} */
+
+.fitnessLogo {
+  height: 80px;
+  width: 200px;
+  margin-left: 5rem;
+}
+
+.navbar-brand:focus, .navbar-brand:hover {
+  color: #5CE1E6;
+}
+
+.navLinks {
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: end;
+  margin-left: auto;
+}
+
+@media (max-width: 576px) {
+  .navLinks {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .navLinks {
+    font-size: 1rem;
+  }
+}
+
+.nav-link {
+  color: #5CE1E6;
+  font-weight: normal;
+  font-family: 'Oswald';
+}
+
+
+.navCollapse {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* For bigger screens may need to do a media query for toggler */
+.navbar-toggler {
+  color: #5CE1E6;
+  justify-content: end;
+  font-size: 1.3rem;
+  margin-right: .5rem;
+}
+
+
+@media (max-width: 576px) {
+  .navBrand {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+  .navBrand {
+    font-size: 30px;
+  }
+}
+@media (max-width: 352px) {
+  .navBrand {
+    font-size: 20px;
+  }
+}
+
+
+.myFithub {
+  background-size: cover;
+  background-position: center;
+}
+
+.fitContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fitTitle {
+  font-size: 6rem;
+  color: white;
+  display: flex;
+  letter-spacing: .2rem;
+  justify-content: center;
+  font-weight: normal;
+  text-shadow: black 1px 0 10px;
+  font-family: 'Faster One', cursive;
+  margin-top: -200px;
+}
+
+.fitText {
+  font-size: 1.68rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: black 1px 0 10px;
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .fitTitle {
+    font-size: 4rem; 
+  }
+  
+  .fitText {
+    font-size: 1.2rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .fitTitle {
+    font-size: 3rem;
+  }
+
+  .fitText {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .fitTitle {
+    font-size: 8rem;
+  }
+
+  .fitText {
+    font-size: 2rem;
+  }
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.card {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card a,.card-link {
+  text-decoration: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: Black;
+  font-size: 2.5rem;
+  font-family: 'Faster One', cursive;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginContainer {
+  position: relative;
+  top: 130px;
+  width: 50%;
+  max-width: 400px; 
+  background-color:rgba(0, 0, 0, 0.4);
+  color: #5CE1E6;
+  text-shadow: black 1px 0 10px;
+  font-family: 'Oswald';
+  margin-bottom: 15rem;
+  border-radius: 6%;
+  padding: 3rem;
+  font-size: 15px;
+  transition: 0.2s;
+  border: 0.5px solid #5CE1E6;
+}
+
+.loginBtn {
+  position: relative;
+  top: 25px;
+  font-family: 'Montserrat', sans-serif;
+  width: 160px;
+  margin: 3px;
+  padding: 7px 7px;
+  border-radius: 4%;
+  font-size:17px;
+  text-transform: uppercase;
+  color: white;
+  transition: 0.3s;
+  background-color: #252525;
+  font-weight: 500;
+}
+
+.loginBtn:hover{
+  height: 60px;
+  width: 170px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #252525;
+  color: white;
+  border-bottom: 2px solid #5CE1E6;
+  box-shadow: 5px 10px 30px rgb(5, 9, 9);
+}
+
+.loginPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.signupContainer {
+  position: relative;
+  top: 130px;
+  width: 50%;
+  max-width: 400px; 
+  background-color:rgba(0, 0, 0, 0.4);
+  color: #5CE1E6;
+  text-shadow: black 1px 0 10px;
+  font-family: 'Oswald';
+  margin-bottom: 15rem;
+  border-radius: 6%;
+  padding: 3rem;
+  font-size: 15px;
+  transition: 0.2s;
+  border: 0.5px solid #5CE1E6;
+}
+
+.signupContainer:hover{
+  box-shadow: 5px 10px 30px rgb(0, 0, 0);
+  width: 645px;
+  border-radius: 7%;
+  font-size: 15px;
+  color: white;
+  border: 1px solid rgb(0, 255, 255);
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px; 
+  margin: auto;
+  color: #5CE1E6;
+  font-family: 'Oswald';
+  height: 200px;
+}
+
+.signupPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.historyHeader {
+  font-size: 3rem;
+  font-weight: bold;
+  align-self: center;
+}
+
+.workoutHistory {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.cardioHeader, .strengthHeader {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+
+.signupHeader {
+  font-size: 2rem;
+  align-self: center;
+  font-family: 'Oswald';
+  color: #5CE1E6;
+}
+
+.loginHeader {
+  font-size: 2.5rem;
+  align-self: center;
+  font-family: 'Oswald';
+  color: #5CE1E6;
+  text-shadow: black 1px 0 10px;
+}
+
+.signupBtn {
+  position: relative;
+  top: 25px;
+  font-family: 'Montserrat', sans-serif;
+  width: 160px;
+  margin: 3px;
+  padding: 7px 7px;
+  border-radius: 4%;
+  font-size:17px;
+  text-transform: uppercase;
+  color: white;
+  transition: 0.3s;
+  background-color: #252525;
+  font-weight: 500;
+}
+
+.signupBtn:hover{
+  height: 60px;
+  width: 170px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #252525;
+  color: white;
+  border-bottom: 2px solid #5CE1E6;
+  box-shadow: 5px 10px 30px rgb(5, 9, 9);
+}
+
+@media screen and (max-width: 1300px) {
+  .signupContainer, .loginContainer {
+    width:40%;
+  }  
+  .signupForm, .loginForm {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .signupContainer, .loginContainer {
+    width: 60%;
+  }  
+  .signupForm, .loginForm {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .signupContainer, .loginContainer {
+    width: 80%;
+  }  
+  .signupForm, .loginForm {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+.form-input{
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    background-color: #252525;
+    outline: none;
+    border: none;
+    transition: 0.2s;
+    color: white;
+}
+
+.form-input:hover {
+  background-color: #252525;
+  border: 0.3px solid #5CE1E6;
+  padding: 12px;
+}
+
+.form-control:focus {
+  border-color: #5CE1E6;
+  background:rgba(0, 0, 0, 0.9);
+  color: White;
+  font-family: 'Oswald';
+}
+
+.form-control {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .card a, .card-link {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card a, .card-link {
+    font-size: 26px;
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card a, .card-link {
+    font-size: 20px;
+    line-height: 1;
+  }
+  
+}
+
+@media screen and (max-width: 350px) {
+  .cardContainer {
+    display: block;
+  }
+
+  .card a, .card-link {
+    font-size: 32px;
+    line-height: 1;
+  }
+  
+  .card {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.strengthImg {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.strengthIcon {
+  font-size: 2rem;
+  color: #5CE1E6;
+}
+
+.strengthContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .strengthContainer {
+      padding: 0 15px; 
+    }
+  }
+
+  .strengthForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; 
+    margin-bottom: 50px;
+    background-color:rgba(0, 0, 0, 0.4);
+    color: #5CE1E6;
+    text-shadow: black 1px 0 10px;
+    font-family: 'Oswald';
+    height: 600px;
+  }
+
+  .form-control {
+    background-color:rgba(0, 0, 0, 0.4);
+    font-size: 1.4rem;
+  }
+  
+
+  .form-group label {
+    font-size: 1.4rem;
+  }
+
+  .btn-primary {
+    background-color: #5CE1E6;
+    border-color: #5CE1E6;
+    color: black;
+    margin-top: 10px;
+    display: flex;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  .cardioImg {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .cardioContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .cardioContainer {
+      padding: 0 15px; 
+    }
+  }
+
+  .cardioForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 100px;
+    max-width: 600px; 
+    background-color:rgba(0, 0, 0, 0.4);
+    color: #5CE1E6;
+    text-shadow: black 1px 0 10px;
+    font-family: 'Oswald';
+    height: 600px;
+  }
+
+@media (max-width: 600px) {
+  .cardioForm {
+    height: auto; 
+    padding: 20px; 
+  }
+}
+
+  .signupPage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loginPage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  .donationPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #bbcdda;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; 
+  }
+  
+  .donationHeading {
+    font-family: 'Cherry Bomb One';
+    font-size: 3.5rem;
+    color: #ecb2f3;
+    text-shadow: black 0 0 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .donateContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .handPoint {
+    font-size: 3rem;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5rem;
+    font-weight: bold;
+    text-shadow: black 0 0 6px;
+  }
+
+  .donate-button {
+    background-color: #ecb2f3;
+    font-family: 'Cherry Bomb One';
+    font-size: 4rem;
+    color:black;
+    padding: .1rem .5rem;
+    border-radius: 50px;
+    border-style: none;
+  }
+
+  .successHeader {
+    font-family: 'Cherry Bomb One';
+    font-size: 4rem;
+    color: #ecb2f3;
+    text-shadow: black .5px 0 6px;
+    text-align: center;
+
+  }
+
+  .successDonation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center; 
+    background-color: #bbcdda; 
+    height: 100vh;
+  }
+
+  .krabsImage {
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  @media screen and (max-with: 800px) {
+    .krabsImage {
+      padding: 1rem;
+    }
+    }
+
+
+
+  .cancelDonation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    background-color: #bbcdda;
+    height: 100vh;
+  }
+
+  .cancelTitle {
+    font-family: 'Cherry Bomb One';
+    color: #ecb2f3;
+    text-shadow: black 0 0 6px;
+    background-color: #bbcdda;
+    font-size: 4rem;
+    margin: 1rem;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 550px) {
+    .cancelDonation {
+      margin-top: 1rem;
+    }
+
+    .cancelTitle {
+      font-size: 2.5rem;
+    }
+
+
+  .will {
+    height: 80%;
+    width: 80%;
+    max-width: 600px;
+  }
+
+
+    .will {
+      max-width: 80%;
+      height: 80%;
+      padding-bottom: 2rem;
+    }
+    
+  }
+
+  @media screen and (max-width: 400px) {
+
+    .cancelTitle {
+      font-size: 2rem;
+    }
+   
+    .will {
+      max-width: 80%;
+      height: 80%;
+      padding-bottom: 2rem;
+    }
+    
+  }
+
+
+
+
+
+
+
+
+
+  @media (max-width: 768px) {
+    .donateContainer {
+      max-width: 90%; 
+    }
+  }
+
+  @media (max-width: 430px) {
+    .donateContainer {
+      max-width: 90%; 
+    }
+  
+    .donationHeading {
+      font-size: 2rem; 
+    }
+  
+    .donate-button {
+      font-size: 1.5rem;
+    }
+  }
+
+  .stopwatch-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Oswald';
+    font-size: 4rem;
+    color:black;
+    text-shadow: #5CE1E6 0 0 6px;
+  }
+
+  .stopwatch-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
+  }
+
+  .stopwatch-container::-webkit-scrollbar {
+  width: 0.5em;
+  }
+
+.stopwatch-container::-webkit-scrollbar-track {
+  background: transparent;
+  }
+
+.stopwatch-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 9999px;
+  }
+
+  .stopwatch-container:-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .stopwatch {
+    height: 100vh;
+    display: flex;
+  }
+
+  .stopwatch-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 275px;
+    height: 275px;
+    border-radius: 50%;
+    background-color: black;
+    font-size: 50px;
+    color: #5CE1E6;
+    font-weight: bold;
+    margin: auto;
+  }
+
+  .stopwatch-buttons {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .stopwatch-buttons button {
+    background-color: black;
+    margin: 0 6px; 
+    color: #5CE1E6;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 2rem;
+    font-family: 'Oswald';
+  }
+
+  .stopwatch-buttons button:hover {
+    background-color: white;
+    color: #5CE1E6;
+    border-style: none;
+    font-size: 2rem;
+    font-family: 'Oswald';
+    cursor: grab;
+  }
+
+
+
+  #root {
+    background-color: #bbcdda
+  }
+
+  .timer-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Oswald';
+    font-size: 4rem;
+    color:black;
+    text-shadow: #5CE1E6 0 0 9px;
+  }
+
+  .timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; 
+  }
+
+  .time {
+    font-family: 'Oswald';
+    font-size: 2rem;
+    color:black;
+    text-shadow: #5CE1E6 0 0 6px;
+    font-weight: bold;
+  }
+
+  .clock-face {
+  width: 275px;
+  height: 275px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: #5CE1E6;
+}
+
+.timer-buttons {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.time-button {
+  background-color: black;
+  margin: 0 6px 3px; 
+  color: #5CE1E6;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 2rem;
+  font-family: 'Oswald';
+}
+
+.timer-buttons button {
+  background-color: black;
+  margin: 0 6px; 
+  color: #5CE1E6;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 2rem;
+  font-family: 'Oswald';
+
+}
+
+
+.timer-buttons button:hover {
+  background-color: white;
+  color: #5CE1E6;
+  border-style: none;
+  font-size: 2rem;
+  font-family: 'Oswald';
+  cursor: grab;
+}
+
+
+.workoutHistory {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.cardioList,
+.strengthList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+  .historyItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 140%;
+    padding: 10px;
+    margin-bottom: 0.5rem;
+    background-color: black;
+    opacity: 0.85;
+    border-radius: 8px;
+    color: white;
+  }
+
+  .historyItem .date {
+    display: flex;
+    align-items: center;
+  }
+  
+  .historyItem .historyIcon,
+  .historyItem .historyInfo {
+    margin-right: 10px;
+  }
+  
+
+  .historyName {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  
+  
+  .historyDelete {
+    margin-left: auto;
+  }
+  
+  
+
+.cardioHeader, .strengthHeader {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
+.historyIcon {
+  height: 1rem;
+}
+
+.cardioIcon {
+  margin-right: 0.5rem;
+  width: auto;
+  font-size: 2rem;
+  color: #5CE1E6;
+}
+
+.historyHeader {
+  font-size: 3rem;
+  font-weight: bold;
+  align-self: center;
+}
+
+.historyIndex {
+  margin: 0 auto;
+  align-self: center;
+}
+
+.loadingDiv {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10rem;
+}
+
+.historyContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  margin-bottom: 15rem;
+  background-color:rgba(0, 0, 0, 0.4);
+  color: #5CE1E6;
+  text-shadow: black 1px 0 10px;
+  font-family: 'Oswald';
+}
+
+@media screen and (max-width: 1600px) {
+  .historyContainer {
+    width:80%;
+  }  
+
+}
+
+@media screen and (max-width: 1300px) {
+  .historyContainer {
+    width:80%;
+  }  
+
+
+  
+}
+
+
+@media screen and (max-width: 1030px) {
+  .historyContainer {
+    width: 100%;
+  }  
+
+}
+
+@media screen and (max-width: 800px) {
+  .historyContainer {
+    width: 100%;
+  }  
+
+}
+
+@media screen and (max-width:680px) {
+  .historyContainer {
+    width: 100%;
+  }  
+
+}
+
+@media screen and (max-width: 700px) {
+  .workoutHistory {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.historyPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  }
+
+.loadingImage {
+  height: 25rem;
+  width: 25rem;
+  margin: 0 auto;
+  display: block;
+}
+
+.loadingCaption {
+  font-family: 'Cherry Bomb One';
+  color: #ecb2f3;
+  text-shadow: black 0 0 6px;
+  background-color: #bbcdda;
+  font-size: 2rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+.exerciseBg {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.exerciseHeader {
+  font-size: 3.5rem;
+  font-weight: bold;
+  align-self: center;
+  color: white;
+  text-shadow: #5CE1E6 0 0 5px;
+  font-family: 'Oswald';
+}
+
+.loadingExercise {
+  border-radius: 8px;
+  height: 15rem;
+  width: 17rem;
+  margin-top: .5rem;
+}
+
+.exerciseContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  color: #5CE1E6;
+  text-shadow: black 1px 0 10px;
+  overflow: auto;
+  align-self: center;
+  text-align: center;
+  font-family: 'Oswald';
+}
+
+.exercise-btn {
+  background-color: black;
+  color: #5CE1E6;
+  border-style: none;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  margin-left: .3rem;
+  font-family: 'Oswald';
+}
+
+.exercise-btn:hover {
+  background-color: white;
+  color: #5CE1E6;
+  border-style: none;
+  font-size: 1.8rem;
+  font-family: 'Oswald';
+}
+
+.exercise-input {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 1.8rem;
+  font-family: 'Oswald';
+}
+
+.exerciseList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  height: 400px; 
+  overflow-y: auto;
+}
+
+.exerciseList::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.exerciseList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.exerciseList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 9999px;
+}
+
+.exerciseList::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.exercise-card {
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 8px;
+  width: 50%;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.exercise-title {
+  font-weight: bold;
+  color: black;
+  font-size: 2.5rem;
+  text-shadow: #5CE1E6 0 0 5px;
+}
+
+.exercise-type {
+  color: white;
+  text-shadow: black 0 0 5px;
+  font-size: 1.5rem;
+}
+
+.exercise-muscle {
+  color: white;
+  text-shadow: black 0 0 5px;
+  font-size: 1.5rem;
+}
+
+.exercise-equip{
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: black 0 0 5px;
+}
+
+.exercise-diff {
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: black 0 0 5px;
+}
+
+.exercise-instructions {
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-size: 1.3rem;
+
+  word-break: break-word;
+}
+
+@media screen and (max-width:600px) {
+  .exercise-card {
+    width: 100%;
+  }  
+
+}
+
+@media screen and (max-width:390px) {
+  .exerciseHeader {
+    font-size: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .exerciseContainer {
+    transform: scale(0.9);
+  }
+
+  .exercise-card {
+    width: 100%;
+  }
+
+  .exercise-btn {
+    margin-top: 1.5rem;
+  }
+
+}
+
+@media screen and (max-width:250px) {
+  .exerciseHeader {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .exercise-input {
+    font-size: 1.5rem;
+  }
+
+}
+
+.userName {
+  color: red;
+  font-weight: bold;
+  text-shadow: none;
+}
