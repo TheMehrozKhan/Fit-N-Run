@@ -25,7 +25,7 @@ const NavFunction = () => {
 
                         <Nav className="navLinks">
                             <Nav.Link as={Link} to="/">
-                                Profile
+                                Dashboard
                             </Nav.Link>
                             <Nav.Link as={Link} to="/history">
                                 History
