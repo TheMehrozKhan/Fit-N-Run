@@ -13,6 +13,8 @@ import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import Auth from "./utils/auth";
 import Stopwatch from "./pages/Stopwatch";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import {
   ApolloClient,
@@ -56,6 +58,7 @@ const App = () => {
       <Router>
         <>
           <Navbar />
+          <ToastContainer />
           <Routes>
             <Route path="/" element={isLoggedIn ? <Profile /> : <Signup />}
             />
