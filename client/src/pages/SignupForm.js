@@ -10,7 +10,7 @@ import { RiEyeCloseLine, RiEyeLine } from 'react-icons/ri'; // Import eye icons 
 
 const Signup = () => {
   useEffect(() => {
-    document.title = "Register Account - FitNRun"
+    document.title = "Register Your Account - FitNRun"
   }, [])
 
   const [formState, setFormState] = useState({

@@ -12,7 +12,7 @@ import Auth from "../utils/auth";
 const Login = () => {
 
   useEffect(() => {
-    document.title = "Login Account - FitNRun"
+    document.title = "Login Your Account - FitNRun"
   }, [])
 
   const [email, setEmail] = useState("");
