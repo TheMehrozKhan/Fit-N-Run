@@ -177,7 +177,6 @@ code {
 .card:hover {
   border: 0.1px solid #5CE1E6;
   box-shadow: rgba(0, 187, 255, 0.15) 0px 48px 100px 0px;
-  padding-top: 8px;
 }
 
 .card a,.card-link {
