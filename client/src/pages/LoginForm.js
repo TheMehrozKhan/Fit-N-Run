@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import gym from "../images/gym.jpg";
+import { RiEyeCloseLine, RiEyeLine } from "react-icons/ri"; // Import eye icons from react-icons library
+import { toast } from "react-toastify"; // Import toast module from react-toastify
+import "react-toastify/dist/ReactToastify.css";
 
 import Auth from "../utils/auth";
 
 const Login = () => {
+
+  useEffect(() => {
+    document.title = "Login Account - FitNRun"
+  }, [])
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State to track whether to show password or not
   const [login, { error, data }] = useMutation(LOGIN_USER);
-
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -21,11 +29,16 @@ const Login = () => {
 
       Auth.login(data.login.token);
     } catch (e) {
+      toast.error("Invalid credentials. Please try again."); // Display error message using React Toastify
     }
 
     // clear form values
     setEmail("");
     setPassword("");
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -43,17 +56,33 @@ const Login = () => {
                   placeholder="Your email"
                   name="email"
                   type="email"
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+                <div style={{ position: "relative", width: "100%" }}>
+                  <input
+                    className="form-input"
+                    placeholder="******"
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  {/* Show/hide password button */}
+                  {showPassword ? (
+                    <RiEyeCloseLine
+                      className="password-icon"
+                      onClick={togglePasswordVisibility}
+                    />
+                  ) : (
+                    <RiEyeLine
+                      className="password-icon"
+                      onClick={togglePasswordVisibility}
+                    />
+                  )}
+                </div>
                 <button
                   className="loginBtn"
                   style={{ cursor: "pointer" }}
@@ -62,12 +91,6 @@ const Login = () => {
                   Submit
                 </button>
               </form>
-            )}
-
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
             )}
           </div>
         </div>

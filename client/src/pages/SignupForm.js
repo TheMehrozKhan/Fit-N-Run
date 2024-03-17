@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
@@ -9,6 +9,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { RiEyeCloseLine, RiEyeLine } from 'react-icons/ri'; // Import eye icons from react-icons library
 
 const Signup = () => {
+  useEffect(() => {
+    document.title = "Register Account - FitNRun"
+  }, [])
+
   const [formState, setFormState] = useState({
     username: '',
     email: '',
@@ -84,6 +88,8 @@ const Signup = () => {
   };
 
   return (
+    <>
+    <title>My Site: Contact Us</title>
     <main className="signupPage" style={{ backgroundImage: `url(${backSignup})` }}>
       <div className="col-12 col-lg-10">
         <div className="signupContainer card">
@@ -155,6 +161,7 @@ const Signup = () => {
         </div>
       </div>
     </main>
+    </>
   );
 };
 
