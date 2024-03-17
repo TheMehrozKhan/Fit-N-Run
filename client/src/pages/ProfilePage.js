@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { GiRunningNinja } from "react-icons/gi";
 import { ImStopwatch } from "react-icons/im";
-import { FaWeightHanging } from "react-icons/fa";
+import { TbWeight } from "react-icons/tb";
 
 import backProfile from "../images/backProfile.png";
 
@@ -46,15 +46,13 @@ const Profile = () => {
                         <Link className="cardio-link" to="/cardio"> Cardio &nbsp;&nbsp; <GiRunningNinja /></Link>
                     </div>
                     <div className="card">
-                        <Link className="nutrition-link" to="/exercises"> Exercises &nbsp;&nbsp; <FaWeightHanging /></Link>
+                        <Link className="nutrition-link" to="/exercises"> Exercises &nbsp;&nbsp; <TbWeight /></Link>
                     </div>
                     <div className="card">
                         <Link className="stopwatch-link" to="/stopwatch"> Stopwatch &nbsp;<ImStopwatch /></Link>
                     </div>
                 </div>
             </Container>
-
-
         </div>
     );
 };
