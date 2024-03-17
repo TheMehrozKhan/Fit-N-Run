@@ -355,8 +355,8 @@ code {
 }
 
 .cardioHeader, .strengthHeader {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 0.5rem;
+  font-weight: 300;
   display: inline-block;
 }
 
@@ -517,6 +517,45 @@ code {
     }
   }
 
+  .signupContainer {
+    position: relative;
+    top: 130px;
+    width: 50%;
+    max-width: 400px; 
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #5CE1E6;
+    text-shadow: black 1px 0 10px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 15rem;
+    border-radius: 6%;
+    padding: 3rem;
+    font-size: 15px;
+    transition: 0.2s;
+    border: 0.5px solid #5CE1E6;
+  }
+  
+  .signupContainer:hover {
+    width: 700px; /* Adjusted width */
+    border-radius: 7%;
+    font-size: 15px;
+    color: white;
+    border: 1px solid rgb(0, 255, 255);
+    box-shadow: rgba(0, 187, 255, 0.15) 0px 48px 100px 0px;
+    background-color: #25252548;
+  }
+  
+  .signupForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Remove max-width */
+    color: #5CE1E6;
+    font-family: "Poppins", sans-serif;
+    height: auto; /* Adjusted height */
+  }
+
+
   .strengthForm {
     display: flex;
     flex-direction: column;
@@ -525,11 +564,11 @@ code {
     width: 100%;
     max-width: 600px; 
     margin-bottom: 50px;
-    background-color:rgba(0, 0, 0, 0.4);
     color: #5CE1E6;
     text-shadow: black 1px 0 10px;  
     font-family: "Poppins", sans-serif;
     height: 600px;
+    background-color: #252525;
   }
 
   .form-control {
@@ -1001,11 +1040,13 @@ code {
   
 
 .cardioHeader, .strengthHeader {
-  font-size: 2rem;
-  font-weight: bold;
+  margin-top: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 400;
   display: flex;
   justify-content: center;
   margin-bottom: 1rem; /* Adjust as needed */
+  color: white;
 }
 
 .historyIcon {
@@ -1040,16 +1081,27 @@ code {
 }
 
 .historyContainer {
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
-  margin: auto;
   width: 50%;
+  margin: auto; /* Centering the container horizontally */
+  margin-top: 12rem;
   margin-bottom: 15rem;
-  background-color:rgba(0, 0, 0, 0.4);
-  color: #5CE1E6;
-  text-shadow: black 1px 0 10px;  
+  background-color: rgb(8, 8, 8);
+  color: #5ce1e6;
+  text-shadow: black 1px 0 10px;
   font-family: "Poppins", sans-serif;
+  border: 0.5px solid #353535;;
+  border-radius: 16px;
+  transition: 0.2s;
 }
+
+.historyContainer:hover{
+  border: 0.5px solid #5CE1E6;;
+}
+
 
 @media screen and (max-width: 1600px) {
   .historyContainer {
@@ -1062,8 +1114,6 @@ code {
   .historyContainer {
     width:80%;
   }  
-
-
   
 }
 
@@ -1084,6 +1134,7 @@ code {
 
 @media screen and (max-width:680px) {
   .historyContainer {
+    margin-right: 160px;
     width: 100%;
   }  
 
@@ -1099,13 +1150,11 @@ code {
 }
 
 .historyPage {
-  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   }
 
 .loadingImage {

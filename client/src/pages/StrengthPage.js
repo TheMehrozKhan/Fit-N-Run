@@ -3,41 +3,56 @@ import strengthBg from "../images/strengthImg.jpg";
 import { Container } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { ADD_STRENGTH } from "../utils/mutations";
+import Flatpickr from 'react-flatpickr';
+import 'flatpickr/dist/themes/light.css';
 
 const Strength = () => {
     const [activity, setActivity] = useState('');
-    const [reps, setReps] = useState(10);
-    const [sets, setSets] = useState(3);
-    const [weight, setWeight] = useState(45);
-    const [date, setDate] = useState('');
+    const [customActivity, setCustomActivity] = useState(''); // State variable for custom activity
+    const [reps, setReps] = useState();
+    const [sets, setSets] = useState();
+    const [weight, setWeight] = useState();
+    const [date, setDate] = useState(new Date()); // Set default date to today
     const [saveStrength, { error }] = useMutation(ADD_STRENGTH);
 
     const handleActivityChange = (e) => {
-        setActivity(e.target.value);
+        const selectedActivity = e.target.value;
+        setActivity(selectedActivity);
+        if (selectedActivity !== "Custom") {
+            setCustomActivity(''); // Reset custom activity when selecting a predefined activity
+        }
+    };
+
+    const handleCustomActivityChange = (e) => {
+        setCustomActivity(e.target.value);
     };
 
     const handleRepsChange = (e) => {
-        setReps(parseInt(e.target.value));
+        const value = parseInt(e.target.value);
+        setReps(value > 0 ? value : 1); // If value is negative, set it to 1
     };
 
     const handleSetsChange = (e) => {
-        setSets(parseInt(e.target.value));
+        const value = parseInt(e.target.value);
+        setSets(value > 0 ? value : 1); // If value is negative, set it to 1
     };
 
     const handleWeightChange = (e) => {
-        setWeight(parseInt(e.target.value));
+        const value = parseInt(e.target.value);
+        setWeight(value > 0 ? value : ''); // If value is negative, set it to empty string
     };
 
-    const handleDateChange = (e) => {
-        setDate(e.target.value);
+    const handleDateChange = (selectedDates) => {
+        setDate(selectedDates[0]);
     };
 
     const handleStrengthSubmit = async (e) => {
         e.preventDefault();
+        const selectedActivity = activity === "Custom" ? customActivity : activity;
         const { data } = await saveStrength({
             variables: {
                 input: {
-                    name: activity,
+                    name: selectedActivity,
                     reps: reps,
                     sets: sets,
                     weight: weight,
@@ -47,22 +62,39 @@ const Strength = () => {
         });
 
         setActivity('');
-        setReps('');
-        setSets('');
-        setWeight('');
-        setDate('');
+        setCustomActivity(''); // Reset custom activity
+        setReps(''); // Resetting to default value
+        setSets(''); // Resetting to default value
+        setWeight(''); // Resetting to default value
+        setDate(new Date()); // Reset date to today
     };
 
     return (
         <div className="strengthImg" style={{ backgroundImage: `url(${strengthBg})` }}>
-            <Container
-                className="strengthContainer" >
+            <Container className="strengthContainer">
                 <div className="strengthForm">
                     <h1 className="strengthTitle"> Strength Training </h1>
                     <form onSubmit={handleStrengthSubmit}>
                         <div className="form-group label">
                             <label>Activity:</label>
-                            <input type="text" className="form-control" placeholder="Bicep Curls" value={activity} onChange={handleActivityChange} />
+                            <select className="form-control" value={activity} onChange={handleActivityChange}>
+                                <option value="">Select an activity...</option>
+                                <option value="Push-ups">Push-ups</option>
+                                <option value="Pull-ups">Pull-ups</option>
+                                <option value="Squats">Squats</option>
+                                <option value="Deadlifts">Deadlifts</option>
+                                <option value="Bench Press">Bench Press</option>
+                                <option value="Custom">Custom</option>
+                            </select>
+                            {activity === "Custom" && (
+                                <input
+                                    type="text"
+                                    className="form-control mt-2"
+                                    placeholder="Enter custom activity"
+                                    value={customActivity}
+                                    onChange={handleCustomActivityChange}
+                                />
+                            )}
                         </div>
                         <div className="form-group label">
                             <label>Reps:</label>
@@ -78,17 +110,19 @@ const Strength = () => {
                         </div>
                         <div className="form-group label">
                             <label>Date:</label>
-                            <input type="text" className="form-control" placeholder="05/27/2023" value={date} onChange={handleDateChange} />
+                            <Flatpickr
+                                className="form-control"
+                                value={date}
+                                options={{ dateFormat: 'm/d/Y' }}
+                                onChange={handleDateChange}
+                            />
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </Container>
-
         </div>
     );
 };
 
 export default Strength;
-
-
