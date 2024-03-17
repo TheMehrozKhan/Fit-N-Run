@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import Flatpickr from 'react-flatpickr';
+import 'flatpickr/dist/themes/light.css';
 import cardioImg from "../images/cardioImg.jpg";
 import { Container } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { ADD_CARDIO } from "../utils/mutations";
-
 
 const Cardio = () => {
     const [cardio, setCardio] = useState('');
@@ -17,15 +18,17 @@ const Cardio = () => {
     };
 
     const handleCardioDurationChange = (e) => {
-        setCardioDuration(parseInt(e.target.value));
+        const value = parseInt(e.target.value);
+        setCardioDuration(value > 0 ? value : 0); // If value is negative, set it to 0
     };
 
     const handleCardioDistanceChange = (e) => {
-        setCardioDistance(parseInt(e.target.value));
+        const value = parseInt(e.target.value);
+        setCardioDistance(value > 0 ? value : 0); // If value is negative, set it to 0
     };
 
-    const handleDateChange = (e) => {
-        setDate(e.target.value);
+    const handleDateChange = (selectedDates) => {
+        setDate(selectedDates[0]);
     };
 
     const handleCardioSubmit = async (e) => {
@@ -42,15 +45,14 @@ const Cardio = () => {
         });
 
         setCardio('');
-        setCardioDuration('');
-        setCardioDistance('');
+        setCardioDuration(0); // Resetting to default value
+        setCardioDistance(0); // Resetting to default value
         setDate('');
     };
 
     return (
         <div className="cardioImg" style={{ backgroundImage: `url(${cardioImg})` }}>
-            <Container
-                className="cardioContainer">
+            <Container className="cardioContainer">
                 <div className='cardioForm'>
                     <h1 className="cardioTitle"> Cardio </h1>
                     <form onSubmit={handleCardioSubmit}>
@@ -68,7 +70,13 @@ const Cardio = () => {
                         </div>
                         <div className="form-group label">
                             <label>Date:</label>
-                            <input type="text" className="form-control" placeholder="05/27/2023" value={date} onChange={handleDateChange} />
+                            <Flatpickr
+                                className="form-control"
+                                value={date}
+                                options={{ dateFormat: 'm/d/Y' }}
+                                onChange={handleDateChange}
+                                placeholder="Enter Your Date"
+                            />
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
