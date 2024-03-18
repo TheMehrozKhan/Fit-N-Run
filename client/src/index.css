@@ -574,7 +574,13 @@ code {
     height: 750px;
     background-color: #151515;
     border-radius: 35px;
-    border: 1px solid #494a4a;
+    border: 0.2px solid #494a4a;
+    transition: 0.3s;
+  }
+
+  .strengthForm:hover {
+    border: 1px solid rgb(0, 255, 255);
+    box-shadow: rgba(0, 187, 255, 0.15) 0px 48px 100px 0px;
   }
 
   .form-control {
@@ -584,8 +590,8 @@ code {
   }
 
   .strengthbtn {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
