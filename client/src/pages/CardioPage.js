@@ -54,7 +54,7 @@ const Cardio = () => {
         <div className="cardioImg" style={{ backgroundImage: `url(${cardioImg})` }}>
             <Container className="cardioContainer">
                 <div className='cardioForm'>
-                    <h1 className="cardioTitle"> Cardio </h1>
+                    <h1 className="cardioTitle" style={{marginTop:'30px',marginBottom:'30px',fontSize:'19px;',color:'white'}}> Cardio </h1>
                     <form onSubmit={handleCardioSubmit}>
                         <div className="form-group">
                             <label>Activity:</label>
@@ -78,7 +78,7 @@ const Cardio = () => {
                                 placeholder="Enter Your Date"
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="strengthbtn">Submit</button>
                     </form>
                 </div>
             </Container>
