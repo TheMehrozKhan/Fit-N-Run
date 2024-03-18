@@ -73,7 +73,7 @@ const Strength = () => {
         <div className="strengthImg" style={{ backgroundImage: `url(${strengthBg})` }}>
             <Container className="strengthContainer">
                 <div className="strengthForm">
-                    <h1 className="strengthTitle"> Strength Training </h1>
+                    <h2 className="strengthTitle" style={{marginTop:'30px',marginBottom:'30px',fontSize:'19px;',color:'white'}}> Strength Training </h2>
                     <form onSubmit={handleStrengthSubmit}>
                         <div className="form-group label">
                             <label>Activity:</label>
@@ -117,7 +117,7 @@ const Strength = () => {
                                 onChange={handleDateChange}
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="strengthbtn">Submit</button>
                     </form>
                 </div>
             </Container>
