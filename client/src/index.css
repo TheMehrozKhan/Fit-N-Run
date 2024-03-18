@@ -664,18 +664,28 @@ code {
   }
 
   .cardioForm {
+    margin-top: 250px;
+    margin-bottom: 250px;
+    /* margin-bottom: 250px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-bottom: 100px;
     max-width: 600px; 
-    background-color:rgba(0, 0, 0, 0.4);
     color: #5CE1E6;
-    text-shadow: black 1px 0 10px;
+    text-shadow: black 1px 0 10px;  
     font-family: "Poppins", sans-serif;
-    height: 600px;
+    height: 750px;
+    background-color: #151515;
+    border-radius: 35px;
+    border: 0.2px solid #494a4a;
+    transition: 0.3s;
+  }
+
+  .cardioForm:hover {
+    border: 1px solid rgb(0, 255, 255);
+    box-shadow: rgba(0, 187, 255, 0.15) 0px 48px 100px 0px;
   }
 
 @media (max-width: 600px) {
@@ -875,13 +885,13 @@ code {
   }
 
   .stopwatch-title {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: "Poppins", sans-serif;
-    font-size: 4rem;
-    color:black;
-    text-shadow: #5CE1E6 0 0 6px;
+    font-size: 2.2rem;
+    color:white;
   }
 
   .stopwatch-container {
@@ -915,58 +925,61 @@ code {
   }
 
   .stopwatch-display {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 275px;
     height: 275px;
     border-radius: 50%;
-    background-color: black;
+    background-color: #151515;
     font-size: 50px;
     color: #5CE1E6;
-    font-weight: bold;
-    margin: auto;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0.2px solid #5CE1E6;
+    box-shadow: rgba(0, 187, 255, 0.2) 0px 48px 55px 0px;
   }
 
   .stopwatch-buttons {
+    border: 0.2px solid #494a4a;
     display: flex;
     justify-content: center;
     padding: 10px;
+    background-color: #151515;
+    border-radius: 7px;
+    transition: 0.3s;
+    margin-bottom: 75px;
+    margin-top: 30px;
+  }
+
+  .stopwatch-buttons:hover {
+    border: 0.2px solid #5CE1E6;
   }
   
   .stopwatch-buttons button {
-    background-color: black;
+    background-color: #151515;
     margin: 0 6px; 
-    color: #5CE1E6;
-    border-radius: 10px;
+    color: white;
     border-style: none;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
+    transition: 0.3s;
   }
-
-  .stopwatch-buttons button:hover {
-    background-color: white;
-    color: #5CE1E6;
-    border-style: none;
-    font-size: 2rem;
-    font-family: "Poppins", sans-serif;
-    cursor: grab;
-  }
-
-
 
   #root {
     background-color: #bbcdda
   }
 
   .timer-title {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: "Poppins", sans-serif;
-    font-size: 4rem;
-    color:black;
-    text-shadow: #5CE1E6 0 0 9px;
+    font-size: 2.2rem;
+    color:white;
   }
 
   .timer-container {
@@ -978,23 +991,28 @@ code {
 
   .time {
     font-family: "Poppins", sans-serif;
-    font-size: 2rem;
-    color:black;
-    text-shadow: #5CE1E6 0 0 6px;
-    font-weight: bold;
+    font-size: 1.5rem;
+    color:white;
+    font-weight: 400;
+    text-align: center;
   }
 
-  .clock-face {
-  width: 275px;
-  height: 275px;
-  border-radius: 50%;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
-  font-weight: bold;
-  color: #5CE1E6;
+.clock-face {
+  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 275px;
+    height: 275px;
+    border-radius: 50%;
+    background-color: #151515;
+    font-size: 50px;
+    color: #5CE1E6;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0.2px solid #5CE1E6;
+    box-shadow: rgba(0, 187, 255, 0.2) 0px 48px 55px 0px;
 }
 
 .timer-buttons {
@@ -1004,13 +1022,14 @@ code {
 }
 
 .time-button {
-  background-color: black;
-  margin: 0 6px 3px; 
-  color: #5CE1E6;
+  background-color: #151515;
+  margin: 0 8px 10px; 
+  color: white;
   border-radius: 10px;
   border-style: none;
-  font-size: 2rem;
+  font-size: 0.6rem;
   font-family: "Poppins", sans-serif;
+  padding: 15px;
 }
 
 .timer-buttons button {

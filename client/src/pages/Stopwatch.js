@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Timer from '../components/Timer';
-import cardioImg from '../images/cardioImg.jpg';
+import stopwatch from '../images/stopwatch.jpg';
 
 const Stopwatch = () => {
     const [minutes, setMinutes] = useState(0);
@@ -48,7 +48,7 @@ const Stopwatch = () => {
     };
 
     return (
-        <div className="cardioImg" style={{ backgroundImage: `url(${cardioImg})` }}>
+        <div className="cardioImg" style={{ backgroundImage: `url(${stopwatch})` }}>
             <div className="stopwatch">
                 <div className="stopwatch-container">
                     <h1 className="stopwatch-title">Stopwatch</h1>
