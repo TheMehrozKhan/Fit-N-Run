@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { GET_EXERCISES } from '../utils/queries';
-import weights from '../images/weights.jpg';
-import loadingImage from '../images/loading.gif';
+import weights from '../images/weights.png';
 
 const ExerciseList = () => {
     const [muscle, setMuscle] = useState('');
-    const [searchExercises, { loading, error, data }] = useLazyQuery(GET_EXERCISES);
+    const [searchExercises, { loading, error, data }] =
+useLazyQuery(GET_EXERCISES);
 
     const handleInputChange = (e) => {
         setMuscle(e.target.value);
@@ -19,10 +19,6 @@ const ExerciseList = () => {
         });
     };
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
     if (error) {
         return <div>Error: {error.message}</div>;
     }
@@ -30,10 +26,11 @@ const ExerciseList = () => {
     const exercises = data?.getExercises || [];
 
     return (
-        <div className="exerciseBg" style={{ backgroundImage: `url(${weights})` }}>
+        <div className="exerciseBg" style={{ backgroundImage:
+`url(${weights})` }}>
             <div className="exerciseContainer">
                 <div>
-                    <h1 className="exerciseHeader">Recommended Exercises</h1>
+                    <h1 className="exerciseHeader" style={{marginBottom:'15px'}}>Recommended Exercises</h1>
                     <div>
                         <input className="exercise-input"
                             type="text"
@@ -41,24 +38,31 @@ const ExerciseList = () => {
                             value={muscle}
                             onChange={handleInputChange}
                         />
-                        <button className="exercise-btn" onClick={handleSearch}>Search</button>
+                        <button className="exercise-btn"
+onClick={handleSearch}>Search</button>
                     </div>
                     <div className="exerciseList">
                         {exercises.length > 0 ? (
                             exercises.slice(0, 8).map((exercise) => (
-                                <div className="exercise-card" key={exercise.name}>
-                                    <h3 className="exercise-title">{exercise.name}</h3>
-                                    <p className="exercise-type">Type: {exercise.type}</p>
-                                    <p className="exercise-muscle">Muscle: {exercise.muscle}</p>
-                                    <p className="exercise-equip">Equipment: {exercise.equipment}</p>
-                                    <p className="exercise-diff">Difficulty: {exercise.difficulty}</p>
-                                    <p className="exercise-instructions">Instructions: {exercise.instructions}</p>
+                                <div className="exercise-card"
+key={exercise.name}>
+                                    <h3
+className="exercise-title">{exercise.name}</h3>
+                                    <p className="exercise-type">Type:
+{exercise.type}</p>
+                                    <p
+className="exercise-muscle">Muscle: {exercise.muscle}</p>
+                                    <p
+className="exercise-equip">Equipment: {exercise.equipment}</p>
+                                    <p
+className="exercise-diff">Difficulty: {exercise.difficulty}</p>
+                                    <p
+className="exercise-instructions">Instructions:
+{exercise.instructions}</p>
                                 </div>
 
                             ))
-                        ) : (
-                            <img src={loadingImage} alt="anime squat" className="loadingExercise" />
-                        )}
+                        ) : null}
 
                     </div>
                 </div>
