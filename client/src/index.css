@@ -1251,11 +1251,10 @@ code {
 }
 
 .exerciseHeader {
-  font-size: 3.5rem;
-  font-weight: bold;
+  font-size: 2.8rem;
+  font-weight: 500;
   align-self: center;
   color: white;
-  text-shadow: #5CE1E6 0 0 5px;
   font-family: "Poppins", sans-serif;
 }
 
@@ -1283,30 +1282,34 @@ code {
 }
 
 .exercise-btn {
-  background-color: black;
-  color: #5CE1E6;
+  background-color: #151515;
+  color: white;
   border-style: none;
   border-radius: 10px;
-  font-size: 1.8rem;
+  font-size: 1rem;
   margin-left: .3rem;
   font-family: "Poppins", sans-serif;
+  padding: 16px;
+  border: 0.5px solid #5ce1e6;
+  transition: 0.3s;
+  width: 120px;
 }
 
 .exercise-btn:hover {
-  background-color: white;
-  color: #5CE1E6;
-  border-style: none;
-  font-size: 1.8rem;
-  font-family: "Poppins", sans-serif;
+  background-color:#252525;
 }
 
 .exercise-input {
-  background-color: black;
+  background-color: #151515;
   color: white;
   border-radius: 10px;
   border-style: none;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
+  padding: 15px;
+  border: 0.5px solid #bbcdda3c;
+  width: 350px;
+
 }
 
 .exerciseList {
