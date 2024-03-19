@@ -1,74 +1,74 @@
-import React, { useState } from 'react';
-import { useLazyQuery } from '@apollo/client';
-import { GET_EXERCISES } from '../utils/queries';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import weights from '../images/weights.png';
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const genAI = new GoogleGenerativeAI('AIzaSyCoEo2YV5HCOkBJbR9B8Efw9qzMC0ECpVo');
+const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
 const ExerciseList = () => {
-    const [muscle, setMuscle] = useState('');
-    const [searchExercises, { loading, error, data }] =
-useLazyQuery(GET_EXERCISES);
+  const [muscle, setMuscle] = useState('');
+  const [response, setResponse] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-    const handleInputChange = (e) => {
-        setMuscle(e.target.value);
-    };
+  const handleInputChange = (e) => {
+    setMuscle(e.target.value);
+    setError(null); // Clear any previous errors on input change
+  };
 
+  const handleSearch = async () => {
+    setIsLoading(true);
+    setError(null);
 
-    const handleSearch = () => {
-        searchExercises({
-            variables: { muscle },
-        });
-    };
-
-    if (error) {
-        return <div>Error: {error.message}</div>;
+    try {
+      const prompt = `Provide a description of exercises targeting the muscle group: ${muscle}`;
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+      setResponse(text);
+    } catch (error) {
+      // ...error handling...
+    } finally {
+      setIsLoading(false);
     }
+  };
 
-    const exercises = data?.getExercises || [];
-
-    return (
-        <div className="exerciseBg" style={{ backgroundImage:
-`url(${weights})` }}>
-            <div className="exerciseContainer">
-                <div>
-                    <h1 className="exerciseHeader" style={{marginBottom:'15px'}}>Recommended Exercises</h1>
-                    <div>
-                        <input className="exercise-input"
-                            type="text"
-                            placeholder="Enter a Muscle Group"
-                            value={muscle}
-                            onChange={handleInputChange}
-                        />
-                        <button className="exercise-btn"
-onClick={handleSearch}>Search</button>
-                    </div>
-                    <div className="exerciseList">
-                        {exercises.length > 0 ? (
-                            exercises.slice(0, 8).map((exercise) => (
-                                <div className="exercise-card"
-key={exercise.name}>
-                                    <h3
-className="exercise-title">{exercise.name}</h3>
-                                    <p className="exercise-type">Type:
-{exercise.type}</p>
-                                    <p
-className="exercise-muscle">Muscle: {exercise.muscle}</p>
-                                    <p
-className="exercise-equip">Equipment: {exercise.equipment}</p>
-                                    <p
-className="exercise-diff">Difficulty: {exercise.difficulty}</p>
-                                    <p
-className="exercise-instructions">Instructions:
-{exercise.instructions}</p>
-                                </div>
-
-                            ))
-                        ) : null}
-
-                    </div>
-                </div>
-            </div>
-        </div >
-    );
+  return (
+    <div className="exerciseBg" style={{ backgroundImage: `url(${weights})` }}>
+      <div className="exerciseContainer">
+        <div>
+          <h1 className="exerciseHeader">Exercises From - FitNRun AI</h1>
+          <div>
+            <input
+              className="exercise-input"
+              type="text"
+              placeholder="Enter a Muscle Group"
+              value={muscle}
+              onChange={handleInputChange}
+            />
+            <button className="exercise-btn" onClick={handleSearch} disabled={isLoading}>
+              {isLoading ? 'Loading...' : 'Search'}
+            </button>
+          </div>
+          {error && <div className="error-message">{error}</div>}
+          {response && (
+      <div className="exercise-response">
+        <h2 style={{marginBottom:`20px`}}>Exercises for {muscle}</h2>
+        <div dangerouslySetInnerHTML={{
+          __html: response
+            .replace(/\*\b(.+?)\b\*/g, '<b>$1</b>') // Replace bold formatting
+            .replace(/\*/g, '') // Remove remaining asterisks
+            .split('\n\n')
+            .map((item) => `<p>${item.trim()}</p>`)
+            .join('')
+        }} />
+      </div>
+    )}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ExerciseList;
