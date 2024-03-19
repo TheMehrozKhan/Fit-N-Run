@@ -54,7 +54,7 @@ const ExerciseList = () => {
           {error && <div className="error-message">{error}</div>}
           {response && (
       <div className="exercise-response">
-        <h2 style={{marginBottom:`20px`}}>Exercises for {muscle}</h2>
+        <h2 style={{marginBottom:`20px`, marginTop:`12px`}}>Exercises for {muscle}</h2>
         <div dangerouslySetInnerHTML={{
           __html: response
             .replace(/\*\b(.+?)\b\*/g, '<b>$1</b>') // Replace bold formatting
