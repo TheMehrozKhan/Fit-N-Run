@@ -13,8 +13,9 @@ const ExerciseList = () => {
 
   const handleInputChange = (e) => {
     setMuscle(e.target.value);
-    setError(null); // Clear any previous errors on input change
+    setError(null); // Clear any previous errors on input 
   };
+
 
   const handleSearch = async () => {
     setIsLoading(true);
