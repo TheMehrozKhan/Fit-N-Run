@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import weights from '../images/weights.png';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI('AIzaSyCoEo2YV5HCOkBJbR9B8Efw9qzMC0ECpVo');
+const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GOOGLE_GENERATIVE_AI_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
 const ExerciseList = () => {
