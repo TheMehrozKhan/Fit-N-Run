@@ -5,8 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
-        "watch": "nodemon server.js",
-        "build": "npm start build:prod"
+        "watch": "nodemon server.js"
     },
     "keywords": [],
     "author": "",
